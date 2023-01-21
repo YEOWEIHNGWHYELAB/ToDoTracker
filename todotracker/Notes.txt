@@ -1,0 +1,22 @@
+## Terminal Log ##
+pip install django django-rest-framework djoser
+pip install "django-anymail[mailgun]"
+pip install django-environ
+pip install requests
+pip install gunicorn whitenoise psycopg2
+pip install dj_database_url
+django-admin startproject TaskManagerDemo
+cd TaskManagerDemo
+python manage.py startapp users
+python manage.py makemigrations
+python manage.py showmigrations
+python manage.py migrate
+python manage.py startapp tasks
+python manage.py makemigrations tasks
+python manage.py migrate
+pip freeze > requirements.txt
+
+3 Apps
+Main App -> TaskManagerDemo
+Task App -> Contains the Category along with the Tasks Model
+Users App -> Manage User (email, username, password)

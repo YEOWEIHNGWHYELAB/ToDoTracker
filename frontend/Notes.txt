@@ -1,0 +1,30 @@
+npm --version
+npx create-react-app frontend
+cd frontend
+npm run start
+npm install react-router-dom axios lodash @mui/material @emotion/react @emotion/styled prop-types
+npm install @mui/icons-material
+npm install formik react-color yup
+npm install --save formik
+npm uninstall yup
+npm i yup@0.28.5
+npm run start
+npm install notistack
+npm run start
+npm install query-string
+npm run start
+npm install react-masonry-css
+npm run start
+npm install chart.js react-chartjs-2
+npm run start
+npm install react-google-recaptcha
+npm run start
+npm run build
+npm init -y
+npm install ncp
+node moveWebBuild.js
+heroku login
+git init
+heroku create taskmanager-deploy
+git remote
+heroku open

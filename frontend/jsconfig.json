@@ -1,0 +1,9 @@
+{
+    "_comment": "Lets us use absolute import in our react app, instead of ../../CustomComponet, We can use src/components/CustomComponent",
+    "compilerOptions": {
+        "baseUrl": "./"
+    },
+    "include": [
+        "src"
+    ]
+}
