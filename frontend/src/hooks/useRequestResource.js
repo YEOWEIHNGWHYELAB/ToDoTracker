@@ -4,13 +4,12 @@ import { useSnackbar } from "notistack";
 
 import formatHttpApiError from "src/helpers/formatHttpApiError";
 import { LoadingOverlayResourceContext } from "src/components/LoadingOverlayResource";
-import getCommonOptions from "src/helpers/axios/getCommonOptions"
+import getCommonOptions from "src/helpers/axios/getCommonOptions";
 
 export default function useRequestResource({ endpoint, resourceLabel }) {
     const [resourceList, setResourceList] = useState({
         results: []
     });
-
     const [resource, setResource] = useState(null);
     const [error, setError] = useState(null);
     const { enqueueSnackbar } = useSnackbar();
@@ -40,21 +39,21 @@ export default function useRequestResource({ endpoint, resourceLabel }) {
             }).catch(handleRequestResourceError)
     }, [endpoint, handleRequestResourceError, setLoading])
 
-    const addResource = useCallback(
-        (values, successCallback) => {
-            setLoading(true);
-            axios.post(`/api/${endpoint}/`, values, getCommonOptions()).then(() => {
+    const addResource = useCallback((values, successCallback) => {
+        setLoading(true);
+        axios.post(`/api/${endpoint}/`, values, getCommonOptions())
+            .then(() => {
                 setLoading(false);
                 enqueueSnackbar(`${resourceLabel} added`)
                 if (successCallback) {
                     successCallback();
                 }
             }).catch(handleRequestResourceError)
-        }, [endpoint, enqueueSnackbar, resourceLabel, handleRequestResourceError, setLoading])
+    }, [endpoint, enqueueSnackbar, resourceLabel, handleRequestResourceError, setLoading])
 
     const getResource = useCallback((id) => {
         setLoading(true);
-        axios.get(`/api/${endpoint}/${id}`, getCommonOptions())
+        axios.get(`/api/${endpoint}/${id}/`, getCommonOptions())
             .then((res) => {
                 setLoading(false);
                 const { data } = res;
