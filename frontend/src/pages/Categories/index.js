@@ -56,20 +56,22 @@ export default function Categories() {
             </Button>
 
         </Box>
+
         Categories List
+
         <TableContainer component = {Paper}>
             <Table sx={{ minWidth: 360 }} size = "small">
                 <TableHead>
                     <TableRow>
-                        <TableCell algin = "left">
+                        <TableCell algin="left">
                             Name
                         </TableCell>
 
-                        <TableCell algin = "left">
+                        <TableCell algin="left">
                             Color
                         </TableCell>
 
-                        <TableCell algin = "right">
+                        <TableCell algin="right">
                             Actions
                         </TableCell>
                     </TableRow>
@@ -81,20 +83,22 @@ export default function Categories() {
                                 <TableCell Align="left">
                                     {r.name}
                                 </TableCell>
+
                                 <TableCell Align="left">
                                     <ColorBox color = { `#${r.color}`} />
                                 </TableCell>
+                                
                                 <TableCell Align="right">
-                                    <Box sx = {{ display: "flex", justifyContent: "flex-end" }}>
+                                    <Box sx = {{ display: "flex", justifyContent: "left" }}>
                                         <Link to = {`/categories/edit/${r.id}`} key = "category-edit">
                                             <IconButton size="large">
                                                 <EditIcon />
                                             </IconButton>
                                         </Link>
                                         <IconButton size="large" onClick = {() => {
-                                            handleConfirmDelete(r.id)
-                                        }}>
-                                                <DeleteIcon />
+                                                handleConfirmDelete(r.id)
+                                            }}>
+                                            <DeleteIcon />
                                         </IconButton>
                                     </Box>
                                 </TableCell>
